@@ -16,19 +16,23 @@ impl Clock {
         let mut hr: i32 = hours;
         let mut min: i32 = minutes;
 
-        while min >= 60 {
-            hr += 1;
-            min -= 60;
+        if min >= 60 {
+            hr += min / 60;
+            min %= 60;
+        } else if min % 60 == 0 {
+            hr -= min.abs() / 60;
+            min = 0;
+        } else if min.is_negative() {
+            hr -= min.abs() / 60 + 1;
+            min = 60 - min.abs() % 60;
         }
-        while min < 0 {
-            min += 60;
-            hr -= 1;
-        }
-        while hr >= 24 {
-            hr -= 24;
-        }
-        while hr < 0 {
-            hr += 24;
+
+        if hr >= 24 {
+            hr %= 24;
+        } else if hr % 24 == 0 {
+            hr = 0;
+        } else if hr < 0 {
+            hr = 24 - hr.abs() % 24;
         }
 
         Clock {
