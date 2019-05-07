@@ -1,17 +1,23 @@
+/// Bob response generator. Responds:
+///   "Sure." if questioned.
+///   "Whoa, chill out!" if yelled at.
+///   "Calm down, I know what I'm doing!" if yelled a question at.
+///   "Fine. Be that way!" if addressed without saying anything.
+///   "Whatever." to anything else.
 pub fn reply(message: &str) -> &str {
-    let message = message.trim_matches(char::is_whitespace);
+    let message = message.trim();
 
     if message.is_empty() {
-        return "Fine. Be that way!";
-    }
-    if message.chars().all(|c| !c.is_lowercase()) && message.chars().any(|c| c.is_alphabetic()) {
+        "Fine. Be that way!"
+    } else if !message.contains(char::is_lowercase) && message.contains(char::is_alphabetic) {
         if message.ends_with('?') {
-            return "Calm down, I know what I'm doing!";
+            "Calm down, I know what I'm doing!"
+        } else {
+            "Whoa, chill out!"
         }
-        return "Whoa, chill out!";
+    } else if message.ends_with('?') {
+        "Sure."
+    } else {
+        "Whatever."
     }
-    if message.ends_with('?') {
-        return "Sure.";
-    }
-    "Whatever."
 }
