@@ -1,37 +1,17 @@
 pub fn reply(message: &str) -> &str {
-    enum Addressal {
-        Question,
-        Yell,
-        QuestionYell,
-        Nothing,
-        Alphabetic,
-        Numeric,
-    }
+    let message = message.trim_matches(char::is_whitespace);
 
-    let mut response = Addressal::Nothing;
-    for c in message.chars() {
-        if c == '?' {
-            response = match response {
-                Addressal::Yell => Addressal::QuestionYell,
-                _ => Addressal::Question,
-            };
-        } else if c.is_uppercase() || c == '!' {
-            response = match response {
-                Addressal::Nothing | Addressal::Numeric => Addressal::Yell,
-                _ => response,
-            };
-        } else if c.is_ascii_alphabetic() {
-            response = Addressal::Alphabetic;
-        } else if c.is_ascii_digit() {
-            response = Addressal::Numeric;
+    if message.is_empty() {
+        return "Fine. Be that way!";
+    }
+    if message.chars().all(|c| !c.is_lowercase()) && message.chars().any(|c| c.is_alphabetic()) {
+        if message.ends_with('?') {
+            return "Calm down, I know what I'm doing!";
         }
+        return "Whoa, chill out!";
     }
-
-    match response {
-        Addressal::Question => "Sure.",
-        Addressal::Yell => "Whoa, chill out!",
-        Addressal::QuestionYell => "Calm down, I know what I'm doing!",
-        Addressal::Nothing => "Fine. Be that way!",
-        _ => "Whatever.",
+    if message.ends_with('?') {
+        return "Sure.";
     }
+    "Whatever."
 }
