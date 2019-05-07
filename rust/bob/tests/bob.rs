@@ -140,3 +140,18 @@ fn test_nonquestion_ending_with_whitespace() {
         "Whatever.",
     );
 }
+
+#[test]
+fn test_capitalized_ending_in_number() {
+    process_response_case("TAKE 5", "Whoa, chill out!");
+}
+
+#[test]
+fn test_non_punctuation_ascii_chars() {
+    process_response_case("^_^", "Whatever.");
+}
+
+#[test]
+fn test_capitalized_question_ending_with_yell() {
+    process_response_case("WHAT ARE YOU DOING? STOP!", "Whoa, chill out!");
+}
