@@ -13,31 +13,13 @@ pub struct Clock {
 impl Clock {
     /// Instantiate a new Clock.
     pub fn new(hours: i32, minutes: i32) -> Self {
-        let mut hr: i32 = hours;
-        let mut min: i32 = minutes;
-
-        if min >= 60 {
-            hr += min / 60;
-            min %= 60;
-        } else if min % 60 == 0 {
-            hr -= min.abs() / 60;
-            min = 0;
-        } else if min.is_negative() {
-            hr -= min.abs() / 60 + 1;
-            min = 60 - min.abs() % 60;
-        }
-
-        if hr >= 24 {
-            hr %= 24;
-        } else if hr % 24 == 0 {
-            hr = 0;
-        } else if hr < 0 {
-            hr = 24 - hr.abs() % 24;
-        }
+        const MINUTES_IN_DAY: i32 = 24 * 60;
+        let min: i32 = ((minutes % MINUTES_IN_DAY) + MINUTES_IN_DAY) % MINUTES_IN_DAY;
+        let hr: i32 = hours + min / 60;
 
         Clock {
-            hours: hr,
-            minutes: min,
+            hours: ((hr % 24) + 24) % 24,
+            minutes: min % 60,
         }
     }
 
