@@ -1,4 +1,8 @@
-# Exercism
+<h1 align="center">Exercism</h1>
+
+<p align="center">
+  <img src="https://assets.exercism.io/assets/logo-white-e3be059a4bfc4bf65f196a12105e9cff389b5a67f2065a0862d4ff6153571ef5.png" alt="Exercism logo">
+</p>
 
 Recently I've been working my way through tracks on [exercism.io](./exercism.io).
 It's been a great resource for beginning to learn new programming languages
@@ -22,3 +26,4 @@ I am currently working on the following language tracks:
 
 * [Rust](./rust)
 * [JavaScript](./javascript)
+* [TypeScript](./typescript)
