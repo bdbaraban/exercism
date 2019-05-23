@@ -1,7 +1,7 @@
 <h1 align="center">Exercism</h1>
 
 <p align="center">
-  <img src="https://assets.exercism.io/assets/logo-white-e3be059a4bfc4bf65f196a12105e9cff389b5a67f2065a0862d4ff6153571ef5.png" alt="Exercism logo">
+  <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fseeklogo.com%2Fimages%2FE%2Fexercism-logo-83221A7D0F-seeklogo.com.png&f=1" alt="Exercism logo">
 </p>
 
 Recently I've been working my way through tracks on [exercism.io](./exercism.io).
