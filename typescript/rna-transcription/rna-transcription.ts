@@ -1,16 +1,19 @@
 class Transcriptor {
     toRna(dna: string): string {
-        let rna: string = ""
-        for (const nucleotide of dna) {
-            if ("GCTA".indexOf(nucleotide) === -1) {
-                throw new Error("Invalid input DNA.")
+        return [...dna].reduce((rna: string, nucleotide: string): string => {
+            switch (nucleotide) {
+                case "G":
+                    return `${rna}C`
+                case "C":
+                    return `${rna}G`
+                case "T":
+                    return `${rna}A`
+                case "A":
+                    return `${rna}U`
+                default:
+                    throw "Invalid input DNA."
             }
-            rna += (nucleotide === "G" ? "C" :
-                    nucleotide === "C" ? "G" :
-                    nucleotide === "T" ? "A" :
-                                         "U")
-        }
-        return rna
+        }, "")
     }
 }
 
