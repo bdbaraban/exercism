@@ -4,15 +4,10 @@
   <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fseeklogo.com%2Fimages%2FE%2Fexercism-logo-83221A7D0F-seeklogo.com.png&f=1" alt="Exercism logo">
 </p>
 
-Recently I've been working my way through tracks on [exercism.io](./exercism.io).
-It's been a great resource for beginning to learn new programming languages
-through hands-on practice.
+Exercism ([exercism.io](./exercism.io)) has become my go-to resource for starting to learn and get hands-on practice
+with new programming languages.
 
-Exercism tracks play out similarly to the project-based learning format I am
-familiar with at Holberton School. Tracks start with the basics of each language
-and gradually ramp up in intensity, aiming to cover the entire feature-set of a
-given language. For each task, Exericsm provides me a function prototype and test
-suite, and I am tasked with solving the given algorithm.
+Language tracks on Exercism play out similarly to the project-based learning format I became comfortable with at [Holberton School](https://holbertonschool.com). Tracks start with the basics of each language and gradually ramp up in intensity, aiming to cover the entire feature-set of the given language. For each task, Exercism provides me a function prototype and test suite, and I am tasked with solving the given algorithm.
 
 Each track features a "core" curriculum. For every task in the core curriculum,
 I am not approved to move onto the next one until a mentor has reviewed my code.
